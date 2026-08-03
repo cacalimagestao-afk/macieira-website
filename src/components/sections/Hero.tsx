@@ -5,40 +5,53 @@ import { SITE_CONFIG } from '@/lib/config'
 
 export const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-brand-green to-brand-gold min-h-[90vh] flex items-center justify-center px-4">
-      <div className="absolute inset-0 opacity-10 bg-pattern"></div>
+    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
+      {/* Background with gradient pattern */}
+      <div className="absolute inset-0 bg-gradient-dark"></div>
+      <div className="absolute inset-0 bg-pattern"></div>
+      
+      {/* Animated gradient orbs */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-brand-gold opacity-5 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-brand-red opacity-5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          Organizamos o presente financeiro. <br />
-          Abrimos o caminho para crescimento.
+        <div className="mb-8 inline-block">
+          <span className="text-brand-gold text-sm font-semibold tracking-widest uppercase">
+            Bem-vindo à Macieira
+          </span>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-bold text-brand-white mb-6 leading-tight">
+          Organizamos o presente <span className="text-gradient">financeiro</span>.
+          <br />
+          Abrimos o caminho para <span className="text-gradient">crescimento</span>.
         </h1>
 
-        <p className="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-brand-text-muted mb-12 max-w-2xl mx-auto leading-relaxed">
           Diagnóstico financeiro-tributário, captação de recursos e proteção contínua para empresas que querem crescer com inteligência.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
+          
             href={SITE_CONFIG.calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-white text-brand-green font-bold px-8 py-4 rounded hover:bg-gray-100 transition transform hover:scale-105"
+            className="btn-gold"
           >
             <span>📅</span>
             Agendar Consulta
           </a>
 
-          <a
+          
             href="#contato"
-            className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-8 py-4 rounded hover:bg-white hover:text-brand-green transition"
+            className="btn-outline"
           >
             <span>📥</span>
             Baixar Guia
           </a>
         </div>
 
-        <p className="text-white/70 text-sm mt-8">
+        <p className="text-brand-text-muted text-sm mt-8">
           Consulta inicial gratuita e sem compromisso
         </p>
       </div>
