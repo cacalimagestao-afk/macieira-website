@@ -50,4 +50,21 @@ export const NewsletterForm = () => {
         {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
       </div>
 
-      <div className="flex
+      <div className="flex items-start gap-3">
+        <input
+          {...register('sendGuide')}
+          type="checkbox"
+          id="sendGuide"
+          className="mt-1 h-4 w-4 rounded border-brand-gold/40 bg-brand-gray-light accent-brand-gold"
+        />
+        <label htmlFor="sendGuide" className="text-sm text-brand-text-muted">
+          Quero receber o guia gratuito por e-mail
+        </label>
+      </div>
+
+      <button type="submit" disabled={isLoading} className="btn-gold w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
+        {isLoading ? 'Enviando...' : 'Quero Receber'}
+      </button>
+    </form>
+  )
+}
