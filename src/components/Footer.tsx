@@ -25,7 +25,7 @@ export const Footer = () => {
             <h3 className="text-lg font-bold text-brand-white mb-4">Contato</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                
+                <a
                   href={`mailto:${SITE_CONFIG.email}`}
                   className="text-brand-text-muted hover:text-brand-gold transition"
                 >
@@ -33,7 +33,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                
+                <a
                   href={`tel:${SITE_CONFIG.phone.replace(/\D/g, '')}`}
                   className="text-brand-text-muted hover:text-brand-gold transition"
                 >
@@ -41,7 +41,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                
+                <a
                   href={SITE_CONFIG.calendlyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
