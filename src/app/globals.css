@@ -40,7 +40,7 @@
   }
 
   .card {
-    @apply bg-brand-gray-light backdrop-blur-xs border border-brand-gray-light rounded-xl p-6 transition-all duration-300 hover:shadow-gold;
+    @apply bg-brand-gray-light backdrop-blur-sm border border-brand-gold/10 rounded-xl p-6 transition-all duration-300 hover:shadow-gold;
   }
 }
 
