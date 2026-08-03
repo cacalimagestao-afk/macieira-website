@@ -32,107 +32,58 @@ export const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md mx-auto">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-brand-black mb-1">
+        <label htmlFor="name" className="block text-sm font-semibold text-brand-white mb-2">
           Nome *
         </label>
         <input
           {...register('name')}
           type="text"
           placeholder="Seu nome"
-          className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-brand-green"
+          className="w-full px-4 py-3 bg-brand-gray-light border border-brand-gold/20 rounded-lg text-brand-white placeholder-brand-text-muted focus:outline-none focus:border-brand-gold transition-colors"
         />
-        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-brand-black mb-1">
+        <label htmlFor="email" className="block text-sm font-semibold text-brand-white mb-2">
           Email *
         </label>
         <input
           {...register('email')}
           type="email"
           placeholder="seu@email.com"
-          className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-brand-green"
+          className="w-full px-4 py-3 bg-brand-gray-light border border-brand-gold/20 rounded-lg text-brand-white placeholder-brand-text-muted focus:outline-none focus:border-brand-gold transition-colors"
         />
-        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+        {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-brand-black mb-1">
+        <label htmlFor="company" className="block text-sm font-semibold text-brand-white mb-2">
           Empresa *
         </label>
         <input
           {...register('company')}
           type="text"
           placeholder="Nome da sua empresa"
-          className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-brand-green"
+          className="w-full px-4 py-3 bg-brand-gray-light border border-brand-gold/20 rounded-lg text-brand-white placeholder-brand-text-muted focus:outline-none focus:border-brand-gold transition-colors"
         />
-        {errors.company && <p className="text-red-500 text-sm mt-1">{errors.company.message}</p>}
+        {errors.company && <p className="text-red-400 text-xs mt-1">{errors.company.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-brand-black mb-1">
+        <label htmlFor="phone" className="block text-sm font-semibold text-brand-white mb-2">
           Telefone *
         </label>
         <input
           {...register('phone')}
           type="tel"
           placeholder="(11) 99999-9999"
-          className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-brand-green"
+          className="w-full px-4 py-3 bg-brand-gray-light border border-brand-gold/20 rounded-lg text-brand-white placeholder-brand-text-muted focus:outline-none focus:border-brand-gold transition-colors"
         />
-        {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
+        {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-brand-black mb-1">
-          Assunto *
-        </label>
-        <select
-          {...register('subject')}
-          className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-brand-green"
-        >
-          <option value="">Selecione um assunto</option>
-          <option value="consultoria">Consultoria</option>
-          <option value="fomento">Captação de Recursos</option>
-          <option value="outro">Outro</option>
-        </select>
-        {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>}
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-brand-black mb-1">
-          Mensagem *
-        </label>
-        <textarea
-          {...register('message')}
-          placeholder="Conte-nos mais sobre sua situação..."
-          rows={4}
-          className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-brand-green resize-none"
-        />
-        {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
-      </div>
-
-      <div className="flex items-center gap-2">
-        <input
-          {...register('scheduleConsultation')}
-          type="checkbox"
-          id="schedule"
-          className="w-4 h-4 text-brand-green rounded focus:ring-2 focus:ring-brand-green"
-        />
-        <label htmlFor="schedule" className="text-sm text-brand-text">
-          Gostaria de agendar uma consulta inicial
-        </label>
-      </div>
-
-      <button
-        type="submit"
-        disabled={isLoading}
-        className="w-full bg-brand-green text-white font-bold py-3 rounded hover:bg-opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
-      </button>
-    </form>
-  )
-}
+        <label
