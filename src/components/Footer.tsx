@@ -23,21 +23,41 @@ export const Footer = () => {
 
           <div>
             <h3 className="text-lg font-bold text-brand-white mb-4">Contato</h3>
-            <ul className="space-y-3">
-              <li><a href={`mailto:${SITE_CONFIG.email}`} className="text-brand-text-muted hover:text-brand-gold transition text-sm">{SITE_CONFIG.email}</a></li>
-              <li><a href={`tel:${SITE_CONFIG.phone}`} className="text-brand-text-muted hover:text-brand-gold transition text-sm">{SITE_CONFIG.phone}</a></li>
+            <ul className="space-y-3 text-sm">
+              <li>
+                
+                  href={`mailto:${SITE_CONFIG.email}`}
+                  className="text-brand-text-muted hover:text-brand-gold transition"
+                >
+                  {SITE_CONFIG.email}
+                </a>
+              </li>
+              <li>
+                
+                  href={`tel:${SITE_CONFIG.phone.replace(/\D/g, '')}`}
+                  className="text-brand-text-muted hover:text-brand-gold transition"
+                >
+                  {SITE_CONFIG.phone}
+                </a>
+              </li>
+              <li>
+                
+                  href={SITE_CONFIG.calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-gold hover:text-brand-gold-light transition"
+                >
+                  Agendar consulta
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-brand-gold/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-brand-text-muted">© {new Date().getFullYear()} Macieira Consultoria. Todos os direitos reservados.</p>
-            <div className="flex gap-6">
-              <a href="#" className="text-brand-text-muted hover:text-brand-gold transition text-sm">LinkedIn</a>
-              <a href="#" className="text-brand-text-muted hover:text-brand-gold transition text-sm">Instagram</a>
-            </div>
-          </div>
+        <div className="border-t border-brand-gold/10 pt-8 text-center">
+          <p className="text-brand-text-muted text-xs">
+            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
