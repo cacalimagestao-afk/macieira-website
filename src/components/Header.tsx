@@ -27,7 +27,7 @@ export const Header = () => {
             <a href="#depoimentos" className="text-sm text-brand-text hover:text-brand-gold transition duration-300">
               Depoimentos
             </a>
-            
+            <a
               href="#contato"
               className="btn-gold text-sm"
             >

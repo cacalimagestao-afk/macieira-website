@@ -31,7 +31,7 @@ export const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          
+          <a
             href={SITE_CONFIG.calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export const Hero = () => {
             Agendar Consulta
           </a>
 
-          
+          <a
             href="#contato"
             className="btn-outline"
           >
