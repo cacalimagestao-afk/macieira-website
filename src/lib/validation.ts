@@ -57,5 +57,10 @@ export const newsletterFormSchema = z.object({
   sendGuide: z.boolean().default(true),
 });
 
-export type ContactFormInput = z.infer<typeof contactFormSchema>;
-export type NewsletterFormInput = z.infer<typeof newsletterFormSchema>;
+/** Tipos para os formulários (entrada no useForm) */
+export type ContactFormInput = z.input<typeof contactFormSchema>;
+export type NewsletterFormInput = z.input<typeof newsletterFormSchema>;
+
+/** Tipos já validados/normalizados — usar nas rotas de API */
+export type ContactFormOutput = z.output<typeof contactFormSchema>;
+export type NewsletterFormOutput = z.output<typeof newsletterFormSchema>;
