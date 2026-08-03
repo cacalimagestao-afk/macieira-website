@@ -7,9 +7,9 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ title, description, icon, index = 0 }: ServiceCardProps) => {
   const iconEmoji: Record<string, string> = {
-    'magnifying-glass': '🔍',
-    'chart-line': '📈',
-    'shield-check': '🛡️',
+    'search': '🔍',
+    'coins': '💰',
+    'target': '🎯',
   }
 
   return (

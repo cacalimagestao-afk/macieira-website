@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { Logo } from './common/Logo'
-import { SITE_CONFIG } from '@/lib/config'
 import { useState } from 'react'
 
 export const Header = () => {

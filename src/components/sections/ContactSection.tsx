@@ -38,7 +38,7 @@ export const ContactSection = () => {
               <ul className="space-y-4 text-sm">
                 <li>
                   <span className="block text-brand-text-muted mb-1">E-mail</span>
-                  
+                  <a
                     href={`mailto:${SITE_CONFIG.email}`}
                     className="text-brand-gold hover:text-brand-gold-light transition break-all"
                   >
@@ -47,7 +47,7 @@ export const ContactSection = () => {
                 </li>
                 <li>
                   <span className="block text-brand-text-muted mb-1">Telefone</span>
-                  
+                  <a
                     href={`tel:${SITE_CONFIG.phone.replace(/\D/g, '')}`}
                     className="text-brand-gold hover:text-brand-gold-light transition"
                   >
@@ -55,7 +55,7 @@ export const ContactSection = () => {
                   </a>
                 </li>
               </ul>
-              
+              <a
                 href={SITE_CONFIG.calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
