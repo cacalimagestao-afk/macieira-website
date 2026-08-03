@@ -35,3 +35,12 @@ export const DmaitMethod = () => {
         <div className="bg-brand-black/50 border border-brand-gold/10 rounded-xl p-8 md:p-12 text-center">
           <p className="text-lg text-brand-white font-semibold mb-2">
             Do diagnóstico ao resultado sustentado.
+          </p>
+          <p className="text-brand-text-muted text-sm">
+            Cada etapa com entregáveis claros, responsáveis definidos e indicadores acompanhados.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
