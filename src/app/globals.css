@@ -1,32 +1,57 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
+  body {
+    @apply bg-brand-black text-brand-text;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 100%, rgba(139, 69, 69, 0.05) 0%, transparent 50%);
+  }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-brand-white font-bold;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-brand-black bg-gradient-gold hover:shadow-gold-lg transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-brand-white mb-4;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #c9a961 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card {
+    @apply bg-brand-gray-light backdrop-blur-xs border border-brand-gray-light rounded-xl p-6 transition-all duration-300 hover:shadow-gold;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .bg-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(139, 69, 69, 0.08) 0%, transparent 50%);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-gold to-brand-white bg-clip-text text-transparent;
   }
 }
