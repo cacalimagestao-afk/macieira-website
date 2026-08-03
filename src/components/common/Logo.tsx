@@ -4,7 +4,7 @@ export const Logo = () => {
       <img
         src="/macieira-logo-final-horizontal-escuro.png"
         alt="Macieira Consultoria"
-        className="h-12 w-auto group-hover:opacity-80 transition-opacity duration-300"
+        className="h-16 w-auto group-hover:opacity-90 group-hover:drop-shadow-lg transition-all duration-300"
       />
     </div>
   )

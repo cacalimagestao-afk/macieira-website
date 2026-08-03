@@ -13,18 +13,28 @@ export const Hero = () => {
       <div className="absolute top-20 right-10 w-72 h-72 bg-brand-gold opacity-5 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-brand-red opacity-5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <div className="mb-8 inline-block">
-          <span className="text-brand-gold text-sm font-semibold tracking-widest uppercase">
-            Bem-vindo à Macieira
-          </span>
+      <div className="relative z-10 max-w-5xl mx-auto">
+        {/* Logo Grande */}
+        <div className="flex justify-center mb-12">
+          <img
+            src="/macieira-logo-final-horizontal-escuro.png"
+            alt="Macieira Consultoria"
+            className="h-32 w-auto drop-shadow-lg hover:drop-shadow-xl transition-all duration-300 transform hover:scale-105"
+          />
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-brand-white mb-6 leading-tight">
-          Organizamos o presente <span className="text-gradient">financeiro</span>.
-          <br />
-          Abrimos o caminho para <span className="text-gradient">crescimento</span>.
-        </h1>
+        <div className="text-center">
+          <div className="mb-8 inline-block">
+            <span className="text-brand-gold text-sm font-semibold tracking-widest uppercase">
+              Bem-vindo à Macieira
+            </span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold text-brand-white mb-6 leading-tight">
+            Organizamos o presente <span className="text-gradient">financeiro</span>.
+            <br />
+            Abrimos o caminho para <span className="text-gradient">crescimento</span>.
+          </h1>
 
         <p className="text-lg md:text-xl text-brand-text-muted mb-12 max-w-2xl mx-auto leading-relaxed">
           Diagnóstico financeiro-tributário, captação de recursos e proteção contínua para empresas que querem crescer com inteligência.

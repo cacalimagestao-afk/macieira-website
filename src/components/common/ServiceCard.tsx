@@ -12,10 +12,15 @@ export const ServiceCard = ({ title, description, icon, index = 0 }: ServiceCard
     'target': '🎯',
   }
 
+  const barColors = ['bg-white', 'bg-brand-green', 'bg-brand-red']
+
   return (
-    <div className="group card border-brand-gold/20 hover:border-brand-gold/50 hover:shadow-gold-lg cursor-pointer"
+    <div className="group card border-brand-gold/20 hover:border-brand-gold/50 hover:shadow-gold-lg cursor-pointer relative overflow-hidden"
       style={{ animationDelay: `${index * 100}ms` }}>
-      <div className="mb-6">
+      {/* Decorative bar element (like logo) */}
+      <div className={`absolute top-0 left-0 w-1 h-12 ${barColors[index]} group-hover:h-full transition-all duration-500`}></div>
+
+      <div className="mb-6 pl-4">
         <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
           {iconEmoji[icon] || '✨'}
         </div>
