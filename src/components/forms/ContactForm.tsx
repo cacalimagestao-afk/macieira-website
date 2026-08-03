@@ -2,18 +2,19 @@
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import toast from 'react-hot-toast'
 import { contactFormSchema, type ContactFormInput } from '@/lib/validation'
 import { submitContactForm } from '@/lib/api-client'
 import { useState } from 'react'
+import toast from 'react-hot-toast'
 
 export const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false)
+  
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
+    reset,
   } = useForm<ContactFormInput>({
     resolver: zodResolver(contactFormSchema),
   })
@@ -21,25 +22,28 @@ export const ContactForm = () => {
   const onSubmit = async (data: ContactFormInput) => {
     setIsLoading(true)
     try {
-      await submitContactForm(data)
-      toast.success('Mensagem enviada! Entraremos em contato em breve.')
+      const response = await submitContactForm(data)
+      if (!response.success) throw new Error(response.message)
+      
+      toast.success('Mensagem enviada com sucesso! Entraremos em contato em breve.')
       reset()
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : 'Erro ao enviar')
+      toast.error(error instanceof Error ? error.message : 'Erro ao enviar mensagem')
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
         <label htmlFor="name" className="block text-sm font-semibold text-brand-white mb-2">
-          Nome *
+          Nome Completo *
         </label>
         <input
           {...register('name')}
           type="text"
+          id="name"
           placeholder="Seu nome"
           className="w-full px-4 py-3 bg-brand-gray-light border border-brand-gold/20 rounded-lg text-brand-white placeholder-brand-text-muted focus:outline-none focus:border-brand-gold transition-colors"
         />
@@ -48,11 +52,12 @@ export const ContactForm = () => {
 
       <div>
         <label htmlFor="email" className="block text-sm font-semibold text-brand-white mb-2">
-          Email *
+          E-mail *
         </label>
         <input
           {...register('email')}
           type="email"
+          id="email"
           placeholder="seu@email.com"
           className="w-full px-4 py-3 bg-brand-gray-light border border-brand-gold/20 rounded-lg text-brand-white placeholder-brand-text-muted focus:outline-none focus:border-brand-gold transition-colors"
         />
@@ -60,30 +65,4 @@ export const ContactForm = () => {
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-sm font-semibold text-brand-white mb-2">
-          Empresa *
-        </label>
-        <input
-          {...register('company')}
-          type="text"
-          placeholder="Nome da sua empresa"
-          className="w-full px-4 py-3 bg-brand-gray-light border border-brand-gold/20 rounded-lg text-brand-white placeholder-brand-text-muted focus:outline-none focus:border-brand-gold transition-colors"
-        />
-        {errors.company && <p className="text-red-400 text-xs mt-1">{errors.company.message}</p>}
-      </div>
-
-      <div>
-        <label htmlFor="phone" className="block text-sm font-semibold text-brand-white mb-2">
-          Telefone *
-        </label>
-        <input
-          {...register('phone')}
-          type="tel"
-          placeholder="(11) 99999-9999"
-          className="w-full px-4 py-3 bg-brand-gray-light border border-brand-gold/20 rounded-lg text-brand-white placeholder-brand-text-muted focus:outline-none focus:border-brand-gold transition-colors"
-        />
-        {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>}
-      </div>
-
-      <div>
-        <label
+        <label htmlFor="company" className="block text-sm font-semibold text-brand-white
