@@ -1,13 +1,12 @@
 'use client'
 
-import Link from 'next/link'
 import { SITE_CONFIG } from '@/lib/config'
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
       {/* Background with gradient pattern */}
-      <div className="absolute inset-0 bg-gradient-dark"></div>
+      <div className="absolute inset-0 bg-gradient-hero"></div>
       <div className="absolute inset-0 bg-pattern"></div>
       
       {/* Animated gradient orbs */}
